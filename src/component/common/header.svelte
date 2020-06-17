@@ -1,11 +1,9 @@
 <script>
     export let title='Svelte Title';
 </script>
-<main>
     <div class="head">
         <div>{title}</div>
     </div>
-</main>
 <style>
 .head{
     height: 60px;

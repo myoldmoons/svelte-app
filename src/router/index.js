@@ -3,6 +3,7 @@ import Mine from '../component/mine.svelte';
 import List from '../component/list.svelte';
 import NotFound from '../component/notFound.svelte';
 const routes = {
+    '/': Home,
     '/home': Home,
     '/mine': Mine,
     '/list': List,

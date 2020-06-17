@@ -29,9 +29,10 @@
   }
 </style>
 
-<main>
   <header>
-    <Header title={'Home'} />
+    <Header title={'Home'} >
+      <svelte:self />
+    </Header>
   </header>
   <section>
     <div>
@@ -68,4 +69,3 @@
       </Actions>
     </Dialog>
   </section>
-</main>

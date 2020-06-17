@@ -2,8 +2,9 @@
   import Router from "svelte-spa-router";
   import routes from "./router/index.js";
   import { link } from "svelte-spa-router";
-  import {isShowLogin} from './stores/index.js';
-  import Login from './component/login.svelte';
+  import { isShowLogin,isShowLoading } from "./stores/index.js";
+  import Login from "./component/login.svelte";
+  import Loading from "./component/common/loading.svelte";
   const menuList = [
     {
       router: "/home",
@@ -29,7 +30,6 @@
 </script>
 
 <style>
-
   footer ul {
     background-color: #fff;
     display: flex;
@@ -50,8 +50,18 @@
     display: block;
     margin: 0 auto;
   }
-  footer ul li a{
-      -webkit-tap-highlight-color: rgba(0,0,0,0);
+  footer ul li a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  .loading{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0,0,0,0);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
   }
 </style>
 
@@ -72,5 +82,10 @@
   <!-- dialog -->
   {#if $isShowLogin}
     <Login />
+  {/if}
+  {#if $isShowLoading}
+  <div class="loading">
+    <Loading />
+  </div>
   {/if}
 </main>
